@@ -1,21 +1,22 @@
+"use strict";
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
-export const environment = {
-  production: false,
-  firebase: {
-    apiKey: "AIzaSyBdTZubsAAbTo_UxfdIvJVIS2DZkd5P8Gk",
-    authDomain: "ecommerce-angular-app.firebaseapp.com",
-    databaseURL: "https://ecommerce-angular-app.firebaseio.com",
-    projectId: "ecommerce-angular-app",
-    storageBucket: "ecommerce-angular-app.appspot.com",
-    messagingSenderId: "736732197268",
-    appId: "1:736732197268:web:a3266a1b653ccce9831f81",
-    measurementId: "G-31GG7FGKZ2"
-  }
+exports.__esModule = true;
+exports.environment = void 0;
+exports.environment = {
+    production: false,
+    firebase: {
+        apiKey: "AIzaSyBdTZubsAAbTo_UxfdIvJVIS2DZkd5P8Gk",
+        authDomain: "ecommerce-angular-app.firebaseapp.com",
+        databaseURL: "https://ecommerce-angular-app.firebaseio.com",
+        projectId: "ecommerce-angular-app",
+        storageBucket: "ecommerce-angular-app.appspot.com",
+        messagingSenderId: "736732197268",
+        appId: "1:736732197268:web:a3266a1b653ccce9831f81",
+        measurementId: "G-31GG7FGKZ2"
+    }
 };
-
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

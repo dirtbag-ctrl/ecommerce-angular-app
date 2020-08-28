@@ -117,8 +117,13 @@
               "devServerTarget": "ecommerce-angular-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ecommerce-angular-app"
 }

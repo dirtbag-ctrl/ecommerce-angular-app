@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ecommerce-angular-app": {
+      "hosting": {
+        "ecommerce-angular-app": [
+          "ecommerce-angular-app"
+        ]
+      }
+    }
+  }
+}
