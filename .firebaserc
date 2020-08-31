@@ -7,5 +7,8 @@
         ]
       }
     }
+  },
+  "projects": {
+    "default": "plantbase-ecommerce-app"
   }
 }

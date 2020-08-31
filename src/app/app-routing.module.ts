@@ -10,6 +10,7 @@ import { OrderSuccessComponent } from './components/pages/order-success/order-su
 import { LoginComponent } from './components/pages/login/login.component';
 import { AdminProductsComponent } from './components/admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orders.component';
+import { MyOrdersComponent } from './components/pages/my-orders/my-orders.component';
 
 
 // Routes 
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'checkout', component: CheckOutComponent},
   { path: 'order-success', component: OrderSuccessComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'my/orders', component: MyOrdersComponent},
 
   // admin users 
   { path: 'admin/products', component: AdminProductsComponent},
