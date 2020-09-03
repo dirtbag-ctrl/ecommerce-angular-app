@@ -2,6 +2,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 // Libs needed for Angular 
 import { AngularFireModule } from '@angular/fire';
@@ -22,7 +25,7 @@ import { MyOrdersComponent } from './components/pages/my-orders/my-orders.compon
 import { AdminProductsComponent } from './components/admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './components/pages/login/login.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductFormComponent } from './components/admin/product-form/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +39,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MyOrdersComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
-    LoginComponent
+    LoginComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     
     // Intialize Fire Modules
     AngularFireModule.initializeApp(environment.firebase),
