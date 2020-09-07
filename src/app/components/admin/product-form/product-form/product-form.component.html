@@ -6,7 +6,7 @@
         <label for="title">Title</label>
         <input
           #title="ngModel"
-          ngModel
+          [(ngModel)]="product.title"
           name="title"
           id="title"
           type="text"
@@ -26,7 +26,7 @@
           </div>
           <input
             #price="ngModel"
-            ngModel
+            [(ngModel)]="product.price"
             name="price"
             id="price"
             type="number"
@@ -45,7 +45,7 @@
         <label for="category">Category</label>
         <select
           #category="ngModel"
-          ngModel
+          [(ngModel)]="product.category"
           name="category"
           id="category"
           class="form-control"
@@ -68,7 +68,7 @@
         <label for="imageUrl">Image URL</label>
         <input
           #imageUrl="ngModel"
-          ngModel
+          [(ngModel)]="product.imageUrl"
           name="imageUrl"
           id="imageUrl"
           type="text"
@@ -82,20 +82,34 @@
       >
         ImageUrl is required.
       </div>
-      <button class="btn btn-primary">Save</button>
+      <button class="btn btn-primary" id="button">Save</button>
+      <button type="button" (click)="delete()" class="btn btn-danger">
+        Delete
+      </button>
     </form>
   </div>
 
-    <!--- RIGHT SIDE CARD -->
+  <!--- RIGHT SIDE CARD -->
 
   <div class="col-md-6">
-    <div class="card" style="width: 18rem;">
-      <img [src]="imageUrl.value" class="card-img-top" alt="...">
+    <div class="card" style="width: 30rem">
+      <img
+        *ngIf="product.imageUrl; else elseBlock"
+        [src]="product.imageUrl"
+        class="card-img-top"
+        alt=""
+      />
+      <ng-template #elseBlock>
+        <img
+          src="https://images.unsplash.com/photo-1495908333425-29a1e0918c5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+          class="card-img-top"
+          alt=""
+        />
+      </ng-template>
       <div class="card-body">
-        <h5 class="card-title">{{ title.value }}</h5>
-        <p class="card-text">{{ price.value | currency:'USD':true}}</p>
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">{{ product.price | currency: "USD":true }}</p>
       </div>
     </div>
-
   </div>
 </div>

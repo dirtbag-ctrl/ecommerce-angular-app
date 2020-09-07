@@ -5,13 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+// Table Module 
+import {  MatTableModule } from "@angular/material/table";
+import {MatSortModule} from '@angular/material/sort';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'
+import {MatPaginatorModule} from '@angular/material/paginator';
 
+  
 // Libs needed for Angular 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
-
 
 //  Components
 import { AppComponent } from './app.component';
@@ -26,6 +32,7 @@ import { AdminProductsComponent } from './components/admin/admin-products/admin-
 import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { ProductFormComponent } from './components/admin/product-form/product-form/product-form.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -52,6 +59,13 @@ import { ProductFormComponent } from './components/admin/product-form/product-fo
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     NgbModule,
+    NoopAnimationsModule,
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatPaginatorModule,
+    
     
   ],
   providers: [],

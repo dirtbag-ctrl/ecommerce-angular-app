@@ -12,13 +12,19 @@ export class AppComponent {
   // redirects user on log in & logout
   constructor(private auth: AuthService, router: Router, private userService: UserService) {
     auth.user$.subscribe(user => {
-      if (user) {
-        // save user on login
-        userService.save(user);
+      if(!user) return; // no user authenticate
 
-        let returnUrl = localStorage.getItem('returnUrl');
-        router.navigateByUrl(returnUrl);
-      }
+      userService.save(user); // if user save user 
+
+      let returnUrl = localStorage.getItem('returnUrl');
+      if(!returnUrl) return;
+
+      localStorage.removeItem('returnUrl');
+      router.navigateByUrl(returnUrl);
+
+     
+       
+      
     })
   }
 }

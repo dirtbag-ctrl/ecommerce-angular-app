@@ -18,6 +18,7 @@ export class UserService {
     })
   }
 
+  // gets specified user
   get(uid: string): AngularFireObject<AppUser> {
     return this.db.object('/users/' + uid);
   } 

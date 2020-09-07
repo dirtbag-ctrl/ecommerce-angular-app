@@ -1,4 +1,5 @@
-import { AngularFireDatabase } from '@angular/fire/database';
+import { Product } from './../models/product';
+import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 
@@ -17,11 +18,24 @@ export class ProductService {
   // get all products from db 
   getAllProducts() {
     return this.db.list('/products').snapshotChanges()
-    .pipe(map( action => action
-      .map(a => {
-        const key = a.payload.key;
-        const data = a.payload.val();
-        return  data;
-      })));
+     .pipe(
+       map(actions => 
+        actions.map(a => ({ key: a.payload.key, ...a.payload.val() as Product}) ))
+     );
+  }
+
+  // get single product
+  getProduct(productId) {
+      return this.db.object('/products/' + productId).valueChanges();
+  }
+
+  // update a product 
+  update(productId, product) {
+   return this.db.object('/products/' + productId).update(product);
+  }
+
+  // deletes a product
+  delete(productId) {
+    return this.db.object('/products/' + productId).remove();
   }
 }

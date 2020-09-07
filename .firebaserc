@@ -1,14 +1,6 @@
 {
-  "targets": {
-    "ecommerce-angular-app": {
-      "hosting": {
-        "ecommerce-angular-app": [
-          "ecommerce-angular-app"
-        ]
-      }
-    }
-  },
   "projects": {
-    "default": "plantbase-ecommerce-app"
+    "deploy": "ecommerce-angular-app",
+    "default": "ecommerce-angular-app"
   }
 }
